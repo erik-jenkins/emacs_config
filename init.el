@@ -65,6 +65,9 @@
 (use-package evil)
 (require 'evil)
 
+(use-package evil-org)
+(require 'evil-org)
+
 (use-package evil-escape)
 
 (use-package evil-leader)
@@ -102,11 +105,15 @@
   "cs" (lambda () (interactive)(load "~/.emacs.d/init.el"))
 
   ;; org file shortcuts
-  "oie" (lambda () (interactive)(find-file "~/org/index.org"))
+  "oie" (lambda () (interactive)(find-file "~/.emacs.d/org/index.org"))
   "oiv" (lambda () (interactive)
 	  (split-window-horizontally)
 	  (other-window 1)
-	  (find-file "~/org/index.org")))
+	  (find-file "~/.emacs.d/org/index.org")))
+
+;; org mode keybindings
+(evil-define-key 'normal org-mode-map
+  (kbd "ENTER") 'org-follow-link)
 
 (evil-mode 1)
 (evil-escape-mode)
@@ -202,7 +209,10 @@
    (quote
     ("28a104f642d09d3e5c62ce3464ea2c143b9130167282ea97ddcc3607b381823f" default)))
  '(global-company-mode t)
- '(org-blank-before-new-entry (quote ((heading) (plain-list-item)))))
+ '(org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+ '(package-selected-packages
+   (quote
+    (evil-org use-package projectile powerline poet-theme olivetti lsp-ui ivy helm go-mode flycheck evil-leader evil-escape company-posframe company-go base16-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
