@@ -1,0 +1,7 @@
+#+STARTUP: SHOWALL
+
+* Projects  
+- [[./projects/gradeaid.org][GradeAid]]
+
+* Pen and Paper
+- [[./dnd/strahd.org][Curse of Strahd]]
